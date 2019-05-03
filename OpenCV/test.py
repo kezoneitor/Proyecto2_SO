@@ -1,9 +1,8 @@
 import cv2
 import numpy as np
 import os
+from tkinter import *
 
-# Playing video from file:
-cap = cv2.VideoCapture('test.mp4')
 
 try:
     if not os.path.exists('data'):
@@ -11,9 +10,16 @@ try:
 except OSError:
     print ('Error: Creating directory of data')
 
+def change_res(width, height):
+    cap.set(3, width)
+    cap.set(4, height)
+
+# Playing video from file:
+cap = cv2.VideoCapture('test.mp4')
 FPS = 30
 currentFrame = 0
 second = 0
+change_res(1920, 1080)
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
