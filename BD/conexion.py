@@ -6,7 +6,7 @@ def readImage():
 
     archivo = ""
     try:
-        archivo = open("tatuaje 3.jpg", "rb")
+        archivo = open("second_0.jpg", "rb")
         img = archivo.read()
         return img
 
