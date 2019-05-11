@@ -35,8 +35,10 @@ def main():
 
         #Obtiene los valores de la DB
         objCursor.execute("select * from imagenes")
-        registros = objCursor.fetchall()
-        pprint.pprint(registros)
+        registros = objCursor.fetchone()
+        pprint.pprint(registros[0])
+
+        open('archivo.jpg', 'wb').write(bytes(registros[0]))
 
 
     except psycopg2.DatabaseError as e:
