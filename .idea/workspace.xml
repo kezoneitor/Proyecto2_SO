@@ -2,101 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96f97da0-2900-4626-96c4-6a3afb28d4b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Proyecto2_SO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proyecto2_SO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BD/conexion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BD/second_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/.idea/OpenCV.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/assets/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/assets/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/assets/colors.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_105.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_120.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_135.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_150.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_165.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_180.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_195.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_210.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_225.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_240.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_255.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_270.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_285.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_300.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_315.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_330.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_345.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_360.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_375.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_390.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_405.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_420.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_435.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_45.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_450.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_465.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_480.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_495.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_510.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_525.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_540.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_555.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_570.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_585.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_60.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_600.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_615.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_630.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_645.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_660.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_675.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_690.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_705.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_720.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_735.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_75.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_750.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_765.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/data/second_90.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/filtros.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/graphic/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/graphic/colorsWin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/test.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/tkwDennis.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/tkwWilliam.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/venv/Scripts/Activate.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/venv/Scripts/activate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/venv/Scripts/activate.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/venv/Scripts/deactivate.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/venv/Scripts/python.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/venv/Scripts/pythonw.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV/venv/pyvenv.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/Activate.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/activate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/activate.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/deactivate.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/python.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/python.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Scripts/pythonw.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pyvenv.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pyvenv.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vista/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/.idea/BD.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/archivo.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -115,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="9" column="46" lean-forward="true" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+              <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -127,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/database/conexion.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="251">
-              <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+              <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -170,7 +81,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
     <option name="width" value="609" />
@@ -181,7 +92,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -189,15 +99,11 @@
               <item name="Proyecto2_SO" type="b2602c69:ProjectViewProjectNode" />
               <item name="Proyecto2_SO" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Proyecto2_SO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto2_SO" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,7 +268,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
@@ -459,8 +365,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BD/archivo.jpg">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/BD/conexion.py" />
+    <entry file="file://$USER_HOME$/get-pip.py" />
+    <entry file="file://$PROJECT_DIR$/OpenCV/data/darky2.jpg" />
+    <entry file="file://$PROJECT_DIR$/OpenCV/out.jpg" />
+    <entry file="file://$PROJECT_DIR$/OpenCV/test.py" />
+    <entry file="file://$PROJECT_DIR$/OpenCV/filtros.py" />
+    <entry file="file://$PROJECT_DIR$/BD/conexion.py" />
+    <entry file="file://$PROJECT_DIR$/database/conexion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/archivo.jpg.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
