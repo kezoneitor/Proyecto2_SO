@@ -7,7 +7,7 @@ from assets.colors import *
 class MyFrame(Frame):
     def __init__(self):
         Frame.__init__(self)
-        self.master.title("Panel disrruptivo")
+        self.master.title("Server Controller")
         self.master.geometry("800x100")
         self.master.configure(background=coPrincipal)
         self.master.rowconfigure(10, weight=1)

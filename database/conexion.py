@@ -30,7 +30,7 @@ def main():
         #Obtiene la información y la inserta en la DB
         data = readImage()
         binary = psycopg2.Binary(data)
-        objCursor.execute("INSERT INTO imagenes(imagen) VALUES (%s)", (binary,))
+        objCursor.execute("INSERT INTO imagenes(imagen, id) VALUES (%s, %s)", (binary, 1))
         obj.commit()
 
         #Obtiene los valores de la DB
