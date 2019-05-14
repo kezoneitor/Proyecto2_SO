@@ -3,43 +3,16 @@ import sys
 import pprint
 
 def readImage():
-
-    archivo = ""
-    try:
-        archivo = open("second_0.jpg", "rb")
-        img = archivo.read()
-        return img
-
-    except IOError as e:
-        print ("Error %d: %s" % (e.args[0],e.args[1]))
-        sys.exit(1)
-
-    finally:
-        if archivo:
-            archivo.close()
-
-def main():
-
-    #Conexión a la DB
+    # Conexión a la DB
     conexion = "host='localhost' dbname='ProyectoSO2' user='postgres' password='12345'"
     obj = psycopg2.connect(conexion)
     objCursor = obj.cursor()
 
     try:
-
-        #Obtiene la información y la inserta en la DB
-        data = readImage()
-        binary = psycopg2.Binary(data)
-        objCursor.execute("INSERT INTO imagenes(imagen, id) VALUES (%s, %s)", (binary, 1))
-        obj.commit()
-
-        #Obtiene los valores de la DB
+        # Obtiene los valores de la DB
         objCursor.execute("select * from imagenes")
         registros = objCursor.fetchone()
         pprint.pprint(registros[0])
-
-        open('archivo.jpg', 'wb').write(bytes(registros[0]))
-
 
     except psycopg2.DatabaseError as e:
         if obj:
@@ -53,5 +26,53 @@ def main():
             obj.close()
             objCursor.close()
 
+def writeImage(img, id):
 
-main()
+    #Conexión a la DB
+    conexion = "host='localhost' dbname='ProyectoSO2' user='postgres' password='12345'"
+    obj = psycopg2.connect(conexion)
+    objCursor = obj.cursor()
+
+    try:
+
+        #Obtiene la información y la inserta en la DB
+        #data = readImage()
+        binary = psycopg2.Binary(img)
+        objCursor.execute("INSERT INTO imagenes(imagen, id) VALUES (%s, %s)", (binary, id))
+        obj.commit()
+
+    except psycopg2.DatabaseError as e:
+        if obj:
+            obj.rollback()
+
+        print('Error %s' % e)
+        sys.exit(1)
+
+    finally:
+        if obj:
+            obj.close()
+            objCursor.close()
+
+def sizeRegisters():
+    # Conexión a la DB
+    conexion = "host='localhost' dbname='ProyectoSO2' user='postgres' password='12345'"
+    obj = psycopg2.connect(conexion)
+    objCursor = obj.cursor()
+
+    try:
+        # Obtiene los valores de la DB
+        objCursor.execute("select count(id) from imagenes")
+        registros = objCursor.fetchone()
+        return registros[0]
+
+    except psycopg2.DatabaseError as e:
+        if obj:
+            obj.rollback()
+
+        print('Error %s' % e)
+        sys.exit(1)
+
+    finally:
+        if obj:
+            obj.close()
+            objCursor.close()
