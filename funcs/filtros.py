@@ -2,6 +2,7 @@ import numpy as np
 import imageio
 import cv2
 import datetime
+from  threading import Thread
 from database.conexion import *
 
 #Validar que sea un numero
@@ -20,19 +21,29 @@ def ejecutarCrearImagenes(nombre_archivo, cantFrames):
         fps = int(video.get(cv2.CAP_PROP_FPS))
         nombre = str(datetime.datetime.now())+nombre_archivo.split('\\')[len(nombre_archivo.split('\\'))-1]
         i=0
+        listaProcesos = []
         while (True):
             # Capture frame-by-frame
             ret, frame = video.read()
             # Condiciones de salida >> Presionar la letra 'q' o que ya no existen mas frames
-            if cv2.waitKey(20) & 0xFF == ord('q') or not(ret):
+            if cv2.waitKey(20) & 0xFF == ord('q'):
                 break
-            if(i%(int(fps/numFrames)) == 0):
-                x = cv2.circle(frame, (30, 30), 30, (0, 0, 255), -1)
-                cv2.imshow("Process video: " + nombre, x)
-                writeImage(frame, str(i)+"?"+nombre)
-            else:
+            """
+            elif not(ret):
+                for p in listaProcesos:
+                    p.start()
+                for p in listaProcesos:
+                    p.join()
+                break
+            
+            cv2.imshow("Process video: " + nombre, frame)
+            if (i % (int(fps / numFrames)) == 0):
                 cv2.imshow("Process video: " + nombre, frame)
+                proceso = Thread(target=writeImage, args=(frame, str(i) + "?" + nombre))
+                listaProcesos.append(proceso)
             i += 1
+            """
+            calcular_imagen(frame, 127)
 
         # When everything done, release the capture
         video.release()
@@ -50,24 +61,23 @@ def nitidez(img):
     # applying the sharpening kernel to the input image & displaying it.
     sharpened = cv2.filter2D(img, -1, kernel_sharpening)
     return sharpened
-
+"""
 #para calcular si es muy clara o oscura la imagen
-def calcular_imagen(filename, thrshld):
-    imagen_f = imageio.imread(filename, as_gray=True)
-    is_light = np.mean(imagen_f) > thrshld
+def calcular_imagen(frame, thrshld):
+    #imagen_f = imageio.read(filename, as_gray=True)
+    is_light = np.mean(frame) > thrshld
     if is_light:
-        print("light")
+        return oscurecer(frame, 0.6)
     else:
-        print("dark")
+        return aclarar(frame,30)
 
 #filtro de aclarar
 def aclarar(img,increase):
-    image = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    v = image[:, :, 2]
-    v = np.where(v <= 255 - increase, v + increase, 255)
-    image[:, :, 2] = v
-    image = cv2.cvtColor(image, cv2.COLOR_HSV2BGR)
-    cv2.imshow('Brightness', image)
+    a = np.double(img)
+    b = a + increase
+    img2 = np.uint8(b)
+    cv2.imshow('Lightess', img2)
+    return img2
 
 #filtro para oscurecer la imagen
 def oscurecer(img,valor):
@@ -75,3 +85,8 @@ def oscurecer(img,valor):
     hsvImg[..., 2] = hsvImg[..., 2] * valor
     image = cv2.cvtColor(hsvImg, cv2.COLOR_HSV2BGR)
     cv2.imshow('Darkness', image)
+    return image
+"""
+
+
+ejecutarCrearImagenes("C:/Users/Kezo/Documents/GitProjects/Project2_SO_VKP/Proyecto2_SO/funcs/data/orig_14.jpg",30)

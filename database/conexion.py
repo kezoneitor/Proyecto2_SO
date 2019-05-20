@@ -27,7 +27,7 @@ def readImage():
             objCursor.close()
 
 def writeImage(img, id):
-
+    print(id)
     #Conexión a la DB
     conexion = "host='localhost' dbname='ProyectoSO2' user='postgres' password='12345'"
     obj = psycopg2.connect(conexion)
