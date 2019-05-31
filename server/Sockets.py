@@ -8,8 +8,8 @@ ports = {}
 def socketServer(ip):
     global mySocket
     host = ip
-    port = 5000
-    print("Open server in", ip)
+    port = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print("Open server in", ip, port)
     mySocket.bind((host,port))
     mySocket.listen(5)
     while True:
