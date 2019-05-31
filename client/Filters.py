@@ -1,8 +1,12 @@
 import numpy as np
 import cv2
-import datetime
+import multiprocessing
 from  threading import Thread
+import queue
 from client.Connection import *
+
+q = queue.Queue()
+
 
 #filtro para hacer nitidez a la imagen
 def nitidez(img):
@@ -27,11 +31,22 @@ def aplicar_Filtros(path):
 
 def generar_Imagenes(nombre_carpeta, inicio, final):
     arr_img = readImage(nombre_carpeta, inicio, final)
-    listaProcesos = []
     for path in arr_img:
-        proceso = Thread(target=aplicar_Filtros, args=(path,))
-        listaProcesos.append(proceso)
-    for p in listaProcesos:
-        p.start()
-    for p in listaProcesos:
-        p.join()
+        q.put(path)
+    cpus = multiprocessing.cpu_count()  # detect number of cores
+    print("Creating %d threads" % cpus)
+    for i in range(cpus):
+        t = multiprocessing.Process(target=worker)
+        t.daemon = True
+        t.start()
+
+def worker():
+    global q
+    while True:
+        item = q.get()
+        img = cv2.imread(item[0] + item[1])
+        nit = nitidez(img)
+        lap = lapician(nit)
+        cv2.imwrite(item[0] + item[1], lap)
+        updateImage(item)
+        q.task_done()

@@ -17,7 +17,6 @@ def readFile(uri):
             archivo.close()
 
 def writeImage(name_dir, id):
-    print(id)
     #Conexión a la DB
     conexion = "host='localhost' dbname='ProyectoSO2' user='postgres' password='12345'"
     obj = psycopg2.connect(conexion)

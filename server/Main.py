@@ -98,7 +98,9 @@ class Server(Frame):
             return
 
     def eject(self):
-        self.lblNotification.config(text=ejecutarCrearImagenes(self.lblTextLoad.cget("text"), self.lblTextSave.cget("text"), self.inputFps.get()))
+        process = Thread(target=ejecutarCrearImagenes,args=(self.lblTextLoad.cget("text"), self.lblTextSave.cget("text"), self.inputFps.get(),))
+        process.start()
+        process.join()
         self.lblTotalImages.config(text="Total de imagenes: " + str(sizeRegisters()))
 
     def quality(self):

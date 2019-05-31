@@ -4,10 +4,7 @@ import datetime
 from  threading import Thread
 from server.Connection import *
 import time
-import queue
-import multiprocessing
 
-q = queue.Queue()
 #Validar que sea un numero
 def isNumber(num):
     try:
@@ -26,20 +23,28 @@ def ejecutarCrearImagenes(nombre_archivo, nombre_carpeta, cantFrames):
         nombre = nombre[0:len(nombre)-4].replace(".","_").replace(":", "_")
         nombre_carpeta = nombre_carpeta.replace("\\", "/")+"/"
         i=0
+        listaProcesos = []
         start_time = time.time()
         while (True):
             # Capture frame-by-frame
             ret, frame = video.read()
             # Condiciones de salida >> Presionar la letra 'q' o que ya no existen mas frames
             if cv2.waitKey(20) & 0xFF == ord('q') or not(ret):
+
+                for p in listaProcesos:
+                    p.start()
+                for p in listaProcesos:
+                    p.join()
                 break
-            resizeframe = cv2.resize(frame, (720, 480))
             if (i % (int(fps / numFrames)) == 0):
-                cv2.imshow("Process video: " + nombre, resizeframe)
+                #cv2.imshow("Process video: " + nombre, frame)
                 cv2.imwrite(nombre_carpeta+str(i)+"_"+nombre+".jpg", frame)
                 writeImage(nombre_carpeta, str(i)+"_"+nombre+".jpg")
-            else:
-                cv2.imshow("Process video: " + nombre, resizeframe)
+                proceso = Thread(target=writeImage, args=(nombre_carpeta, str(i)+"_"+nombre+".jpg"))
+                proceso.daemon = True
+                listaProcesos.append(proceso)
+            #else:
+                #cv2.imshow("Process video: " + nombre, frame)
             i += 1
 
         # When everything done, release the capture
@@ -50,18 +55,9 @@ def ejecutarCrearImagenes(nombre_archivo, nombre_carpeta, cantFrames):
         return "Inserte un número en el campo: 'Tomar___fps' y eliga un archivo"
     return "Proceso Ejecutado con exito"
 
-def worker():
-    global q
-    while True:
-        item = q.get()
-        cv2.imwrite(item[2] + str(item[1]) + "_" + item[3] + ".jpg", item[0])
-        writeImage(item[2], str(item[1]) + "_" + item[3] + ".jpg")
-        q.task_done()
-
 #Crear las imagenes en la base de datos
 def ejecutarCrearImagenesV2(nombre_archivo, nombre_carpeta, cantFrames):
     if(isNumber(cantFrames) and nombre_archivo != "File name"):
-        global breaki
         nombre = str(datetime.datetime.now()) + nombre_archivo.split('\\')[len(nombre_archivo.split('\\')) - 1]
         nombre = nombre[0:len(nombre) - 4].replace(".", "_").replace(":", "_")
         nombre_carpeta = nombre_carpeta.replace("\\", "/") + "/"
@@ -69,30 +65,29 @@ def ejecutarCrearImagenesV2(nombre_archivo, nombre_carpeta, cantFrames):
 
         video = cv2.VideoCapture(nombre_archivo)
         fps = int(video.get(cv2.CAP_PROP_FPS))
-        #total_frames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+        total_frames = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
+        lista_procesos = []
         fr = (fps // numFrames)
         i = fr
         start_time = time.time()
-        while (True):
+        while i < total_frames:
             # Capture frame-by-frame
-            ret, frame = video.read()
-            # Condiciones de salida >> Presionar la letra 'q' o que ya no existen mas frames
-            if cv2.waitKey(20) & 0xFF == ord('q') or not(ret):
-                break
-            if (i % (int(fps / numFrames)) == 0):
-                cv2.imshow("Process video: " + nombre, frame)
-                data = [frame, i, nombre_carpeta, str(i) + "_" + nombre + ".jpg"]
-                q.put(data)
-            else:
-                cv2.imshow("Process video: " + nombre, frame)
-            i += 1
-        q.join() # block until all tasks are done
+            print("Proceso", (i // total_frames) * 100, "%")
+            procesoPrincipal(video, i, nombre_carpeta, str(i)+"_"+nombre+".jpg")
+            proceso = Thread(target=procesoPrincipal, args=(video, i, nombre_carpeta, str(i)+"_"+nombre+".jpg",))
+            lista_procesos.append(proceso)
+            i += fr
         print("--- %s seconds ---" % (time.time() - start_time))
         # When everything done, release the capture
         video.release()
-        cv2.destroyAllWindows()
-
-        return "Proceso terminado"
     else:
         return "Inserte un número en el campo: 'Tomar___fps' y eliga un archivo"
+    return "Proceso Ejecutado con exito"
+
+def procesoPrincipal(video, i, nombre_carpeta, nombre):
+    video.set(1, (i - 1))
+    ret, frame = video.read()
+    cv2.imwrite(nombre_carpeta + str(i) + "_" + nombre + ".jpg", frame)
+    writeImage(nombre_carpeta, str(i) + "_" + nombre + ".jpg")
+
 #Crear funcion que ejecute "generar_Imagenes(nombre_carpeta, inicio, final)" en el cliente
