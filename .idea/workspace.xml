@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f479f79-0daa-478f-aae7-fb135e219b48" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/Filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/general/database/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/general/database/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/Connection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/Connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/Connection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/Filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,7 +30,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="350">
@@ -46,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Sockets.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Sockets.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/Sockets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="175">
+              <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -73,10 +69,12 @@
       <file leaf-file-name="Connection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/Connection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-829">
-              <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+            <state relative-caret-position="200">
+              <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
               <folding>
                 <element signature="e#51#327#0" />
+                <element signature="e#363#1011#0" />
+                <element signature="e#1038#1607#0" />
               </folding>
             </state>
           </provider>
@@ -85,7 +83,7 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="300">
               <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -106,8 +104,8 @@
       <file leaf-file-name="Connection.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/Connection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+            <state relative-caret-position="250">
+              <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
               <folding>
                 <element signature="e#51#327#0" />
                 <element signature="e#356#1014#0" />
@@ -159,18 +157,18 @@
         <option value="$PROJECT_DIR$/mainServer.py" />
         <option value="$PROJECT_DIR$/funcs/client_tcp.py" />
         <option value="$PROJECT_DIR$/funcs/filtros.py" />
-        <option value="$PROJECT_DIR$/client/Connection.py" />
         <option value="$PROJECT_DIR$/general/Sockets/servidor.py" />
         <option value="$PROJECT_DIR$/general/Sockets/cliente.py" />
         <option value="$PROJECT_DIR$/client/Main.py" />
         <option value="$PROJECT_DIR$/server/Sockets.py" />
         <option value="$PROJECT_DIR$/client/Sockets.py" />
         <option value="$PROJECT_DIR$/backup.py" />
-        <option value="$PROJECT_DIR$/server/Connection.py" />
         <option value="$PROJECT_DIR$/server/Main.py" />
         <option value="$PROJECT_DIR$/server/Filters.py" />
         <option value="$PROJECT_DIR$/client/Filters.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/client/Connection.py" />
+        <option value="$PROJECT_DIR$/server/Connection.py" />
       </list>
     </option>
   </component>
@@ -438,7 +436,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -458,6 +456,8 @@
           <caret line="65" column="29" lean-forward="true" selection-start-line="65" selection-start-column="29" selection-end-line="65" selection-end-column="29" />
           <folding>
             <element signature="e#51#327#0" />
+            <element signature="e#363#1011#0" />
+            <element signature="e#1038#1607#0" />
           </folding>
         </state>
       </provider>
@@ -670,25 +670,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/Sockets.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="50">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/Connection.py">
+    <entry file="file://$PROJECT_DIR$/client/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+        <state relative-caret-position="300">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
           <folding>
-            <element signature="e#51#327#0" />
-            <element signature="e#356#1014#0" />
-            <element signature="e#1056#1790#0" />
-            <element signature="e#1817#2386#0" />
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -700,17 +694,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/client/Connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        <state relative-caret-position="250">
+          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+          <folding>
+            <element signature="e#51#327#0" />
+            <element signature="e#356#1014#0" />
+            <element signature="e#1056#1790#0" />
+            <element signature="e#1817#2386#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/Sockets.py">
+    <entry file="file://$PROJECT_DIR$/client/Sockets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="125">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -729,20 +729,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/Connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-829">
-          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+        <state relative-caret-position="200">
+          <caret line="66" column="29" lean-forward="true" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
           <folding>
             <element signature="e#51#327#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#363#1011#0" />
+            <element signature="e#1038#1607#0" />
           </folding>
         </state>
       </provider>
@@ -753,6 +745,16 @@
           <caret line="14" column="46" lean-forward="true" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/Sockets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,6 +1,8 @@
 import psycopg2
 import sys
 
+local = 'localhost'
+
 def readFile(uri):
     archivo = ""
     try:
@@ -18,7 +20,7 @@ def readFile(uri):
 
 def writeImage(name_dir, id):
     #Conexión a la DB
-    conexion = "host='localhost' dbname='ProyectoSO2' user='postgres' password='12345'"
+    conexion = "host='"+local+"' dbname='ProyectoSO2' user='postgres' password='12345'"
     obj = psycopg2.connect(conexion)
     objCursor = obj.cursor()
     img = readFile(name_dir+id)
@@ -42,7 +44,7 @@ def writeImage(name_dir, id):
 
 def sizeRegisters():
     # Conexión a la DB
-    conexion = "host='localhost' dbname='ProyectoSO2' user='postgres' password='12345'"
+    conexion = "host='"+local+"' dbname='ProyectoSO2' user='postgres' password='12345'"
     obj = psycopg2.connect(conexion)
     objCursor = obj.cursor()
 
