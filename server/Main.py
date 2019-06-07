@@ -4,7 +4,9 @@ from tkinter import font
 from server.Filters import *
 from  threading import Thread
 import server.Sockets
-from tkinter.messagebox import showerror
+from tkinter.messagebox import showerror, showinfo
+from server.Connection import *
+import os
 
 
 class Server(Frame):
@@ -49,7 +51,7 @@ class Server(Frame):
                                  background="cyan3",
                                  command=self.connect)
         self.btnCreateImages = Button(self.master,
-                                      text="Eject",
+                                      text="RUN",
                                       font=self.normalFont,
                                       background="light gray",
                                       command=self.eject)
@@ -58,6 +60,12 @@ class Server(Frame):
                                  font=self.normalFont,
                                  background="light gray",
                                  command=self.quality)
+
+        self.btnExtract = Button(self.master,
+                                 text="Extract definity images",
+                                 font=self.normalFont,
+                                 background="light gray",
+                                 command=self.extract)
         #Positions ====================================================================================
         #   >> Row 1
         self.lblAddress.grid(row=1, column=0)
@@ -77,7 +85,7 @@ class Server(Frame):
         self.inputFps.place(x=65, y= 120)
         self.btnCreateImages.place(x=120, y=115)
         self.btnQuality.place(x=170, y=115)
-        self.lblNotification.place(x=290, y=120)
+        self.btnExtract.place(x=295, y=115)
 
     def load_file(self):
         path = easygui.fileopenbox(filetypes = ["*.mp4"])
@@ -98,25 +106,36 @@ class Server(Frame):
             return
 
     def eject(self):
-        process = Thread(target=ejecutarCrearImagenes,args=(self.lblTextLoad.cget("text"), self.lblTextSave.cget("text"), self.inputFps.get(),))
+        process = Thread(target=ejecutarCrearImagenesV2,args=(self.lblTextLoad.cget("text"), self.lblTextSave.cget("text"), self.inputFps.get(),))
         process.start()
         process.join()
         self.lblTotalImages.config(text="Total de imagenes: " + str(sizeRegisters()))
 
     def quality(self):
-        self.lblNotification.config(text=server.Sockets.repartir(sizeRegisters()))
+        if server.Sockets.ports != 0:
+            server.Sockets.repartir(sizeRegisters())
+        else:
+            showerror("Clientes", "No existen conexiones cliente")
 
-        """
-        def combine_funcs(self,*funcs):
-            def combined_func(*args, **kwargs):
-                for f in funcs:
-                    f(*args, **kwargs)
-            return combined_func
-        """
     def ipValide(self, ip):
         if 7 <= len(ip) <= 15 and "." in ip:
             return True
         return False
+
+    def extract(self):
+        if(self.lblTextSave.cget("text") != "Folder name"):
+            nombre_carpeta = self.lblTextSave.cget("text").replace("\\", "/") + "/found_images/"
+            try:
+                os.stat(nombre_carpeta)
+            except:
+                os.mkdir(nombre_carpeta)
+            list = readImage(nombre_carpeta, 0, 0)
+            if len(list) != 0:
+                showinfo("Proceso ejecutado", "Terminado correctamente")
+            else:
+                showinfo("Proceso ejecutado", "Lista vacia")
+        else:
+            showerror("Falta informacion", "Eliga carpeta donde procesar la ejecucion")
 
     def connect(self):
             if self.btnConnect.cget("text") == "Connect":

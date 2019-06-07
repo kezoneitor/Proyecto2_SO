@@ -1,7 +1,7 @@
 import socket
 from client.Filters import *
 
-mySocket = socket.socket()
+mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 message = 'conectado'
 
 def Main(ip, carpeta):

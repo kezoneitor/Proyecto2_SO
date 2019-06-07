@@ -1,23 +1,22 @@
 import socket
 from threading import Thread
 
-mySocket = socket.socket()
+mySocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 item = ""
 ports = {}
 
 def socketServer(ip):
     global mySocket
     host = ip
-    port = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    port = 5000
     print("Open server in", ip, port)
     mySocket.bind((host,port))
     mySocket.listen(5)
     while True:
         conn, addr = mySocket.accept()
+        p = Thread(target=socket, args=(conn, addr,))
+        p.start()
         print("Connection from: " + str(addr))
-        if conn:
-            p = Thread(target=socket, args=(conn, addr,))
-            p.start()
 
 def repartir(size):
     global item

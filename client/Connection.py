@@ -18,23 +18,20 @@ def readFile(uri):
         if archivo:
             archivo.close()
 
-def updateImage(path):
+def delete_db(id):
     # Conexión a la DB
     conexion = "host='"+local+"' dbname='ProyectoSO2' user='postgres' password='12345'"
     obj = psycopg2.connect(conexion)
     objCursor = obj.cursor()
-    img = readFile(path[0] + path[1])
     try:
-        # Obtiene la información y la inserta en la DB
-        binary = psycopg2.Binary(img)
-        objCursor.execute("UPDATE imagenes SET imagen = %s where id = %s", (binary, path[1]))
+        objCursor.execute("delete from imagenes where id = %s", (id,))
         obj.commit()
 
     except psycopg2.DatabaseError as e:
         if obj:
             obj.rollback()
 
-        print('Error updateImage %s' % e)
+        print('Error delete_db %s' % e)
         sys.exit(1)
 
     finally:
