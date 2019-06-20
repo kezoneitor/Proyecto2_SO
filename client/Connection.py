@@ -1,7 +1,7 @@
 import psycopg2
 import sys
 
-local = 'localhost'
+local = '172.24.178.130'
 
 def readFile(uri):
     archivo = ""

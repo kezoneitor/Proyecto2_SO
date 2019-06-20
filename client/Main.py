@@ -1,8 +1,8 @@
 import easygui
 from tkinter import *
 from tkinter import font
-import client.Sockets
-from client.Connection import *
+import Sockets
+from Connection import *
 from threading import Thread
 from tkinter.messagebox import showerror
 
@@ -68,7 +68,7 @@ class Client(Frame):
             if self.btnConnect.cget("text") == "Connect" and self.lblTextSave.cget("text") != "Folder name":
                 if self.ipValide(self.inputAnddress.get()):
                     dir = self.lblTextSave.cget("text").replace("\\","/") + "/"
-                    self.proceso = Thread(target=client.Sockets.Main, args=(self.inputAnddress.get(), dir,))
+                    self.proceso = Thread(target=Sockets.Main, args=(self.inputAnddress.get(), dir,))
                     self.proceso.start()
                     self.btnConnect.config(background="firebrick3", text="Disconnect")
                     self.lblNotification.config(text="Conectado correctamente")
@@ -77,7 +77,7 @@ class Client(Frame):
 
             elif self.btnConnect.cget("text") == "Disconnect":
                 self.btnConnect.config(background="cyan3", text="Connect")
-                client.Sockets.mySocket.close()
+                Sockets.mySocket.close()
                 self.proceso.join()
                 self.lblNotification.config(text="")
 

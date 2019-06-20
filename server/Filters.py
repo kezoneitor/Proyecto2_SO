@@ -1,5 +1,4 @@
 from builtins import print
-
 import numpy as np
 import cv2
 import datetime
@@ -7,6 +6,7 @@ from  threading import Thread
 import time
 import queue
 import multiprocessing
+from Connection import *
 
 q = queue.Queue()
 CANNY = 250
@@ -47,28 +47,35 @@ def ejecutarCrearImagenesV2(nombre_archivo, nombre_carpeta, cantFrames):
         nombre = nombre[0:len(nombre) - 4].replace(".", "_").replace(":", "_")
         nombre_carpeta = nombre_carpeta.replace("\\", "/") + "/"
         numFrames = int(cantFrames)
-
+        img_process = cv2.imread("./en_proceso.png")
         #Video a capturar y calcular frames
         video = cv2.VideoCapture(nombre_archivo)
         fps = int(video.get(cv2.CAP_PROP_FPS))
         fr = (fps // numFrames)
         i = 0
+        see_video = False
         # variables para el reconocimiento de formas
 
         #Ejecución de los hilos con respecto a la cantidad de nucleos de la pc
         cpus = multiprocessing.cpu_count()  # detect number of cores
-        for i in range(1):
+        for i in range(cpus):
             t = Thread(target=worker)
             t.start()
         start_time = time.time()
         while (True):
+            cv2.imshow("En proceso", img_process)
             # Capture frame-by-frame
             ret, frame = video.read()
-            # Condiciones de salida >> Presionar la letra 'q' o que ya no existen mas frames
-            if cv2.waitKey(20) & 0xFF == ord('q') or not(ret):
-                break
             #Cambiar dimensiones de la imagen
             img = cv2.resize(frame, (int(_width), int(_height)))
+
+            # Condiciones de salida >> Presionar la letra 'q' o que ya no existen mas frames
+            if cv2.waitKey(20) & 0xFF == ord('c') or not(ret):
+                break
+            elif cv2.waitKey(20) & 0xFF == ord('v'):
+                see_video = True
+            if see_video:
+                cv2.imshow("nombre", img)
 
             if (i % (int(fps / numFrames)) == 0):
                 data = [img, i, nombre_carpeta, nombre]

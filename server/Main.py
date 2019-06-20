@@ -1,11 +1,11 @@
 import easygui
 from tkinter import *
 from tkinter import font
-from server.Filters import *
+from Filters import *
 from  threading import Thread
-import server.Sockets
+import Sockets
 from tkinter.messagebox import showerror, showinfo
-from server.Connection import *
+from Connection import *
 import os
 
 
@@ -112,8 +112,8 @@ class Server(Frame):
         self.lblTotalImages.config(text="Total de imagenes: " + str(sizeRegisters()))
 
     def quality(self):
-        if server.Sockets.ports != 0:
-            server.Sockets.repartir(sizeRegisters())
+        if len(Sockets.ports) != 0:
+            Sockets.repartir(sizeRegisters())
         else:
             showerror("Clientes", "No existen conexiones cliente")
 
@@ -140,7 +140,7 @@ class Server(Frame):
     def connect(self):
             if self.btnConnect.cget("text") == "Connect":
                 if self.ipValide(self.InputAddress.get()):
-                    self.proceso = Thread(target=server.Sockets.socketServer, args=(self.InputAddress.get(),))
+                    self.proceso = Thread(target=Sockets.socketServer, args=(self.InputAddress.get(),))
                     self.proceso.start()
                     self.btnConnect.config(background="firebrick3", text="Disconnect")
                     self.lblNotification.config(text="")
@@ -149,7 +149,7 @@ class Server(Frame):
 
             elif self.btnConnect.cget("text") == "Disconnect":
                 self.btnConnect.config(background="cyan3", text="Connect")
-                server.Sockets.mySocket.close()
+                Sockets.mySocket.close()
                 self.proceso.join()
                 self.lblNotification.config(text="")
 

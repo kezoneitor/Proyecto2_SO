@@ -3,7 +3,7 @@ import cv2
 import multiprocessing
 from  threading import Thread
 import queue
-from client.Connection import *
+from Connection import *
 import time
 from PIL import Image, ImageDraw
 
